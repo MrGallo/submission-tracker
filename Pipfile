@@ -1,0 +1,20 @@
+[[source]]
+url = "https://pypi.python.org/simple"
+verify_ssl = true
+
+
+[packages]
+django = "*"
+gunicorn = "*"
+psycopg2-binary = "*"
+django-heroku = "*"
+
+
+[dev-packages]
+redgreenunittest = "*"
+coverage = "*"
+mixer = "*"
+
+
+[requires]
+python_version = "3.7"
