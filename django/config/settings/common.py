@@ -25,8 +25,6 @@ SECRET_KEY = 'n+p%vo&q)a67s9kf281!m6!-%6&ig6r7g&5xj#6v40pat71w@+'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['*']
-
 
 # Application definition
 
@@ -69,7 +67,6 @@ TEMPLATES = [
 ]
 
 WSGI_APPLICATION = 'config.wsgi.application'
-
 
 
 # Password validation
