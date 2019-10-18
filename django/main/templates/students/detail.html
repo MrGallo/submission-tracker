@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <h1>{{ student.name }} <small class="text-muted"> - Detail</small></h1>
+    <h3>Submissions</h3>
+    <table class="table table-hover">
+        <thead class="thead-light">
+            <tr>
+                <th scope="col">Classroom</th>
+                <th scope="col">Assignment</th>
+                <th scope="col">Status</th>
+                <th scope="col">Time Submitted</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for sub in submissions %}
+            <tr data-toggle="collapse" data-target="#accordion{{sub.id}}" class="clickable">
+                <td scope="col">{{ sub.classroom_name }}</td>
+                <td scope="col">{{ sub.assignment_name }}</td>
+                <td scope="col">{{ sub.status }}</td>
+                <td scope="col">{{ sub.time_submitted }}</td>
+            </tr>
+            <tr>
+                <td colspan="4" class="accordion">
+                    <div id="accordion{{sub.id}}" class="collapse"><pre><code>{{sub.code}}</pre></code></div>
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>        
+    </table>
+{% endblock content %}

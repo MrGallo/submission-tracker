@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <h1>Fixtures Generated</h1>
+    <table class="table table-striped table-sm">
+        <thead class="thead-light">
+            <tr>
+                <th scope="col">classroom_name</th>
+                <th scope="col">assignment_name</th>
+                <th scope="col">student_name</th>
+                <th scope="col">student_email</th>
+                <th scope="col">status</th>
+                <th scope="col">time_submitted</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for sub in submissions %}
+            <tr>
+                <td scope="col">{{ sub.classroom_name }}</td>
+                <td scope="col">{{ sub.assignment_name }}</td>
+                <td scope="col">{{ sub.student_name }}</td>
+                <td scope="col">{{ sub.student_email }}</td>
+                <td scope="col"><a href="{% url "submission-detail" sub.id %}">{{ sub.status }}</a></td>
+                <td scope="col">{{ sub.time_submitted }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>        
+    </table>
+{% endblock content %}
